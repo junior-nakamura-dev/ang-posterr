@@ -1,0 +1,28 @@
+<style>
+
+</style>
+
+<!--<mat-card>-->
+<!--  <mat-card-title> #1 - Post </mat-card-title>-->
+<!--  <mat-card-content> Met in Curitiba </mat-card-content>-->
+<!--  <mat-card-footer> Junior Nakamura </mat-card-footer>-->
+<!--</mat-card>-->
+
+<!--Feed-->
+<mat-grid-list rowHeight="3:1"  cols="3" *ngFor="let post of posts">
+  <mat-grid-tile>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-title> #{{ post.id }} </mat-card-title>
+      <mat-card-content> {{ post.post }} </mat-card-content>
+      <mat-card-footer> {{ post.dateCreated }} </mat-card-footer>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+  </mat-grid-tile>
+</mat-grid-list>
+
+
+
+<router-outlet></router-outlet>

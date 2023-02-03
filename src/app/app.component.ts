@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'posterr';
+  page = 'feed'
+
+  changePage(newPage: string) {
+    this.page = newPage;
+  }
+
 }
