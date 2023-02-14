@@ -5,20 +5,19 @@
 <div>
   <p>
     <mat-toolbar color="primary">
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" [matMenuTriggerFor]="menu">
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+              [matMenuTriggerFor]="menu">
         <mat-icon>menu</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="changePage('followers')"> Followers </button>
-        <button mat-menu-item (click)="changePage('feed')"> Feed </button>
+        <button mat-menu-item (click)="changePage('followers')"> Followers</button>
+        <button mat-menu-item (click)="changePage('feed')"> Feed</button>
       </mat-menu>
       <span>Posterr</span>
       <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-      </button>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
+      <button mat-icon-button class="example-icon" aria-label="Icon for create a new post"
+              (click)="showWritePostComponent()">
+        <mat-icon>create</mat-icon>
       </button>
     </mat-toolbar>
   </p>
@@ -27,7 +26,7 @@
 <!--Template-->
 <div>
   <ng-template [ngIf]="page === 'feed'">
-    <feed-page></feed-page>
+    <feed-page [showWritePost]="showWritePost"></feed-page>
   </ng-template>
 
   <ng-template [ngIf]="page === 'followers'">
